@@ -1,0 +1,65 @@
+﻿
+
+.container {
+    margin: 0px;
+    padding: 0px;
+    width: 1000px;
+    height: 600px;
+    background-image: url('img/HorskaLouka.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px 25px 4px 25px;
+    border-color: black;
+    border-style: solid;
+    position: relative;
+}
+
+.postava {
+    padding: 0px;
+    filter: grayscale(0);
+    transform: rotateY(0deg);
+    position: absolute;
+    cursor: pointer;
+    left: -100px;
+    top: 280px;
+    margin: 0px;
+    opacity: 0.1;
+    transition: 1s;
+}
+
+.postavaPopis {
+    left: -10px;
+    margin: 2px;
+    min-width: 75px;
+    background-color: darkgray;
+    text-align: center;
+    position: relative;
+    font-size: 12px;
+}
+
+.postavaProgress {
+    height: 5px;
+    left: -10px;
+    margin: 2px;
+    min-width: 75px;
+    position: relative;
+}
+
+#znovu {
+    width: 50px;
+    height: 50px;
+    background-image: url('img/znovu.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left: 1030px;
+    top: 20px;
+}
+
+#prepinaceZvirata {
+    width: 150px;
+    padding: 0px;
+    position: absolute;
+    left: 1015px;
+    top: 100px;
+}
