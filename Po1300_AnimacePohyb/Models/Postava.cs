@@ -12,9 +12,11 @@
 		public string Jmeno { get;  }
 		public string Obrazek { get; }
 		private int Width { get; }
+		private bool smerVpred = true; 
+		private bool HlavaVpravo = true; 
 		private List<Souradnice> SouradniceSeznam { get; } = new List<Souradnice>();
 
-		private int AktualniPozice { get; set; } = -1;
+		public int AktualniPozice { get; private set; } = -1;
 
 		public string Style 
 		{
@@ -31,6 +33,8 @@
 				}
 			}
 		}
+
+		public string TransformRotateY => HlavaVpravo ? "transform: rotateY(0deg);" : "transform: rotateY(180deg);";
 		#endregion
 
 		#region Metody
@@ -42,7 +46,26 @@
 
 		public void Presun()
 		{
-			AktualniPozice++;
+			if (smerVpred)
+			{
+				if(AktualniPozice == SouradniceSeznam.Count - 1)
+				{
+					smerVpred = false;
+				}
+			}
+			else
+			{
+				if (AktualniPozice == 0)
+				{
+					smerVpred = true;
+				}
+			}
+			var predchoziPozice = AktualniPozice;
+
+			AktualniPozice += smerVpred? 1 : -1 ;
+			if (predchoziPozice >=0)
+				HlavaVpravo = SouradniceSeznam[AktualniPozice].PozX > SouradniceSeznam[predchoziPozice].PozX;
+
 		}
 		#endregion
 	}

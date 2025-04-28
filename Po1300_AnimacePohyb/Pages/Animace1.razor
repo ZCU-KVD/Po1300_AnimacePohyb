@@ -3,9 +3,11 @@
 <PageTitle>Animace základ</PageTitle>
 
 <div class="container">
-	<div class="postava" style="@Postava.Style">
+	<div class="postava" style="@Postava.Style" @onclick="Postava.Presun">
 		<p class="postavaPopis">@Postava.Jmeno</p>
-		<img src="@Postava.Obrazek" alt="Obrázek postavy" style="width:100%; position:relative" />
+		<img src="@Postava.Obrazek" alt="Obrázek postavy" 
+			style="width:100%; position:relative; @Postava.TransformRotateY" />
+		<p>@Postava.AktualniPozice</p>
 	</div>
 </div>
 @code {
